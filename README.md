@@ -174,10 +174,54 @@ The parametric analysis of the finger at different positions on the touchscreen 
 
 ![image](https://github.com/user-attachments/assets/ae0bfb30-5e13-4d71-ba1f-b66aa58f6571)
 
+#### 
 
 > Variation in current due to movement of finger from one position to another, for one of the positions result is provided in below image:
 
 ![image](https://github.com/user-attachments/assets/87ada2ed-4f23-49a3-b39e-010a31be3575)
+
+
+### Problems Faced:
+During the simulation process, I encountered a significant issue related to mesh creation. Specifically, I received an error indicating that the mesh limit exceeded 255 nodes, a restriction imposed by the student edition of QuickField. This limitation prevented the automatic generation of the mesh, which is essential for accurate simulation results.
+
+### Conclusion:
+The simulations of the capacitive touchscreen using QuickField provided a comprehensive understanding of how touch positions affect the currents in the electrodes. By modeling the touchscreen with various touch positions, we were able to observe the variations in current through each electrode, which is vital for the functionality of the touchscreen.
+
+The parametric analysis revealed that as the finger's position changes, the currents in the electrodes also change. This relationship is crucial for determining the precise location of the touch on the screen. The data obtained from the simulations can be used to optimize the design and improve the accuracy of touchscreens.
+
+Despite challenges such as mesh generation limits and software crashes, the simulations were successfully completed by manually adjusting mesh parameters and using automation tools like LabelMover. This project not only enhanced my technical skills in using simulation software but also provided practical experience in problem-solving and optimizing designs within software constraints.
+
+
+## Example 3: Touchless Sensor
+
+Touchless sensor consists of two groups of electrodes on the sides of the rectangular dielectric frame. Tx - transmitter, with voltage applied, Rx - receivers. Rx potential depends on the position of the finger near the sensor.
+
+### Problem Type:
+3D electrostatics problem.
+
+### Geometry:
+
+![image](https://github.com/user-attachments/assets/d225e323-f9ee-4e4e-bfaf-f35cdf70aecb)
+
+![image](https://github.com/user-attachments/assets/a12ad4a6-5454-4dca-a49c-91d43a566d86)
+
+![image](https://github.com/user-attachments/assets/eefe0cb2-676a-4793-8825-741baee40ed8)
+
+![image](https://github.com/user-attachments/assets/b527f63a-eb3f-4034-9f29-db0bdef1fbe4)
+
+####
+
+> Orange highlighted in below image  is Rx ( Rx left, Rx top, Rx right, Rx bottom) 
+
+![image](https://github.com/user-attachments/assets/405785be-c338-4de8-a692-299db472c119)
+
+
+> Orange highlighted in below image  is Tx .
+
+![image](https://github.com/user-attachments/assets/2ee9506f-68da-469e-a453-59250d7f4db8)
+
+
+
 
 
 
