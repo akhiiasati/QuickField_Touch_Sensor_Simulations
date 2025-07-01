@@ -29,7 +29,7 @@ Despite the limitations of the QuickField Student Edition — including the 255-
 
 
 # Simulated Examples
-Below are the sensor designs simulated in this project:
+> Below are the detailed sensor designs and simulation case studies included in this project, each highlighting a unique configuration and analysis technique to understand touch sensing mechanisms:
 
 ## Example 1: Touch Sensor Capacitance
 
@@ -64,7 +64,7 @@ Axisymmetric problem of electrostatics.
 
 ![image](https://github.com/user-attachments/assets/f5893a6d-47c1-4f29-947e-1e3de4c86837)
 
-### Capacitance Results
+### Capacitance Results:
 
 The capacitance is plotted as a function of the distance between the touch sensor and the stylus, showing how it changes with variation in distance between the stylus and the dielectric. As the stylus approaches the sensor, the capacitance increases due to the closer proximity of the conductive object affecting the electric field between the Tx and Rx electrodes.
 
@@ -96,7 +96,7 @@ The parametric analysis automated the simulation process, allowing for the colle
 ![image](https://github.com/user-attachments/assets/5582fe58-5b92-4a2a-adc4-17d947f12598)
 
 
-### Problems Faced
+### Problems Faced:
 
 During the simulation process, I encountered a significant issue related to mesh creation. Specifically, I received an error indicating that the mesh limit exceeded 255 nodes, a restriction imposed by the student edition of QuickField. This limitation prevented the automatic generation of the mesh, which is essential for accurate simulation results.
 
@@ -106,7 +106,7 @@ Despite this challenge, I successfully built the mesh within the constraints of 
 
 
 
-###  Conclusion
+###  Conclusion:
 
 The detailed simulation and analysis of the touch sensor capacitance using QuickField provided valuable insights into the behavior of capacitive touch sensors. By modeling various positions of a conductive stylus in relation to the sensor, I was able to observe and quantify how the capacitance changes as the stylus approaches the electrodes. This change in capacitance is crucial for the effective functioning of touch sensors, as it directly impacts their sensitivity and accuracy.
 
@@ -115,5 +115,69 @@ The parametric analysis, facilitated by the LabelMover tool, enabled efficient a
 Overall, this project enhanced my understanding of capacitive touch sensor design and analysis, providing practical experience in handling simulation tools and addressing real-world challenges. The findings from these simulations can inform the development and optimization of touch-sensitive devices, contributing to advancements in sensor technology.
 
 ---
+
+## Example 2: Touch Sensor Capacitance
+
+### Description:
+
+This simulation models a simplified capacitive touchscreen, where the capacitance of the finger and human body is represented by a grounded touch area on the touchscreen surface. Electric potential is applied to electrodes at the four corners of a conductive sheet. When a conductive object with zero potential (representing a finger) touches the sheet, the currents in the electrodes vary based on the touch position.
+
+### Problem Type:
+Plane-parallel problem of DC conduction.
+
+### Geometry:
+
+![image](https://github.com/user-attachments/assets/25a463d9-fa62-414d-8ec6-66cb0bd6222e
+![image](https://github.com/user-attachments/assets/9a832fc1-cd0a-4d40-8fc6-748bd3a8713d)
+
+
+### Given
+-	Electrical Conductivity of the Touchscreen: 100 S/m.
+-	Electrode Voltages: +1V at A, B, C, D.
+-	Finger Voltage: 0V.
+
+### Task: 
+Determine the currents in electrodes A, B, C, and D as a function of the touch position.
+
+### Solution:
+- Different touch positions are simulated by creating separate models.
+- The process of creating new problems, modifying the geometry model, and measuring results is automated using LabelMover.
+
+### Results:
+-	The simulation provides the electric field distribution in the touchscreen.
+-	Due to symmetry, a single chart can be used to measure the currents for all electrodes.
+
+![image](https://github.com/user-attachments/assets/51bfb66f-4c98-4815-acf8-f8a0859402df)
+ 
+
+### Parametric Analysis:
+The parametric analysis of the finger at different positions on the touchscreen shows how the current through the surface of each electrode changes with the touch position. This data is critical for understanding the touchscreen's sensitivity and optimizing its design for accurate touch detection.
+
+| Step   | Current A (A)     | Current B (A)     | Current C (A)     | Current D (A)     |
+|--------|-------------------|-------------------|-------------------|-------------------|
+| 0      | -0.00084149       | 0.00084124        | -0.0008275        | 0.00084439        |
+| 1_3    | -0.00074891       | 0.00096417        | -0.00094646       | 0.0007468         |
+| 1_4    | -0.00072411       | 0.0010046         | -0.0009839        | 0.00072278        |
+| 1_7    | -0.00064809       | 0.0011023         | -0.0011025        | 0.00063639        |
+| 1_8    | -0.0006112        | 0.0011783         | -0.0011247        | 0.00063621        |
+| 1_9    | -0.00058514       | 0.0012078         | -0.0011594        | 0.00060921        |
+| 1_10   | -0.00056423       | 0.0012745         | -0.0012086        | 0.0005874         |
+| 1_11   | -0.00055845       | 0.0013216         | -0.0013165        | 0.0005565         |
+| 1_12   | -0.00053811       | 0.00131           | -0.0013507        | 0.00053626        |
+| 1_13   | -0.00051563       | 0.0013851         | -0.0013974        | 0.00051386        |
+| 1_14   | -0.00049343       | 0.0014562         | -0.0014729        | 0.0004918         |
+| 1_15   | -0.00046622       | 0.0014083         | -0.0014339        | 0.00046469        |
+| 1_16   | -0.00044222       | 0.0014413         | -0.0015002        | 0.00044074        |
+| 1_17   | -0.000411         | 0.0013737         | -0.00149          | 0.00040964        |
+| 1_18   | -0.00037516       | 0.0012898         | -0.0013605        | 0.00037394        |
+
+
+![image](https://github.com/user-attachments/assets/ae0bfb30-5e13-4d71-ba1f-b66aa58f6571)
+
+
+> Variation in current due to movement of finger from one position to another, for one of the positions result is provided in below image:
+
+![image](https://github.com/user-attachments/assets/87ada2ed-4f23-49a3-b39e-010a31be3575)
+
 
 
