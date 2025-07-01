@@ -1,7 +1,5 @@
 # QuickField_Touch_Sensor_Simulations
 
-## 📌 Summary
-
 This repository showcases a series of capacitive and inductive touch sensor simulations developed from scratch using **QuickField Student Edition**. The objective was to explore and analyze the behavior of electric fields, potential distributions, and capacitance in different sensor designs under real-world-inspired conditions. A total of **six distinct sensor configurations** were modeled and simulated successfully:
 
 - Touch_Sensor_Capacitance
@@ -13,9 +11,9 @@ This repository showcases a series of capacitive and inductive touch sensor simu
 
 Despite the limitations of the QuickField Student Edition — including the 255-node mesh cap and occasional crashes during complex geometry modeling — each example was completed with effective simulations and documented results. Troubleshooting and mesh optimization techniques were employed to work around these constraints. This project deepened the understanding of touch sensor physics and simulation practices.
 
----
 
-## 🧠 Software Description: QuickField
+
+## Software Description: QuickField
 
 **QuickField** is a lightweight yet powerful **Finite Element Analysis (FEA)** software used for simulating electromagnetic, electrostatic, thermal, and structural problems. It offers a user-friendly GUI that simplifies geometry creation, mesh generation, and field visualization — making it ideal for education and conceptual modeling.
 
@@ -29,32 +27,35 @@ Despite the limitations of the QuickField Student Edition — including the 255-
 
 🔗 [Download QuickField Student Edition](https://quickfield.com/free_student_version.htm)
 
-# 🧪 Simulated Examples
+
+# Simulated Examples
 Below are the sensor designs simulated in this project:
 
 ## Example 1: Touch Sensor Capacitance
 
-**Description:** The touch sensor consists of two circular electrodes, a transmitting (Tx) and a receiving (Rx) ring, placed on a dielectric board. The presence of a conductive stylus in their vicinity affects the capacitance between the electrodes.
+### Description: 
+The touch sensor consists of two circular electrodes, a transmitting (Tx) and a receiving (Rx) ring, placed on a dielectric board. The presence of a conductive stylus in their vicinity affects the capacitance between the electrodes.
 
-**Problem Type:** Axisymmetric problem of electrostatics.
+### Problem Type:
+Axisymmetric problem of electrostatics.
 
-**Geometry:**
+### Geometry:
 
 ![image](https://github.com/user-attachments/assets/d8b25f09-11c0-4f07-8ea1-419335228bdc)
 
 ![image](https://github.com/user-attachments/assets/b472d5a2-4139-466f-bf01-f60e126fdf28)
 
-**Given:**
+### Given:
 - **Relative Permittivity of Dielectric:** 4.7.
 
-**Task:** Determine the capacitance of Tx and Rx electrodes as a function of the distance between the touch sensor and the stylus.
+### Task: Determine the capacitance of Tx and Rx electrodes as a function of the distance between the touch sensor and the stylus.
 
-**Solution:**
+### Solution:
 - The "floating conductor" boundary condition is assigned to the stylus surface, ensuring no field inside the conductor.
 - Capacitance is calculated as the ratio of stored charge (q) to the potential difference (ΔU) between Rx and Tx electrodes.
 - Simulations are performed for different stylus positions. The LabelMover tool is used to automate a series of calculations.
 
-**Results:**
+### Results:
 - The simulation provides the electric field distribution in and around the touch sensor.
 - The capacitance of the touch sensor changes as the distance between the stylus and the sensor varies.
 - Electric Field Distribution: The electric field is mapped around the touch sensor to visualize how the presence of the stylus influences the field.
@@ -63,7 +64,7 @@ Below are the sensor designs simulated in this project:
 
 ![image](https://github.com/user-attachments/assets/f5893a6d-47c1-4f29-947e-1e3de4c86837)
 
-### 📊 Capacitance Results
+### Capacitance Results
 
 The capacitance is plotted as a function of the distance between the touch sensor and the stylus, showing how it changes with variation in distance between the stylus and the dielectric. As the stylus approaches the sensor, the capacitance increases due to the closer proximity of the conductive object affecting the electric field between the Tx and Rx electrodes.
 
@@ -89,4 +90,30 @@ The parametric analysis automated the simulation process, allowing for the colle
 | 1_15   | 0.265                        | 4.32E-13                         |
 | 1_16   | 0.165                        | 4.85E-13                         |
 | 1_17   | 0.065                        | 5.91E-13                         |
+
+
+
+![image](https://github.com/user-attachments/assets/5582fe58-5b92-4a2a-adc4-17d947f12598)
+
+
+### Problems Faced
+
+During the simulation process, I encountered a significant issue related to mesh creation. Specifically, I received an error indicating that the mesh limit exceeded 255 nodes, a restriction imposed by the student edition of QuickField. This limitation prevented the automatic generation of the mesh, which is essential for accurate simulation results.
+
+To resolve this issue, I had to manually set the mesh spacing instead of relying on the automatic mesh generation feature. By adjusting the spacing parameters, I was able to create a mesh that adhered to the node limit while still maintaining the necessary level of detail for accurate simulations. This manual adjustment process was time-consuming and required careful attention to ensure that the mesh was suitable for the complex geometries involved in the simulations.
+
+Despite this challenge, I successfully built the mesh within the constraints of the student edition and completed all simulations. This experience improved my understanding of mesh generation and the importance of customizing mesh parameters to fit specific software limitations.
+
+
+
+###  Conclusion
+
+The detailed simulation and analysis of the touch sensor capacitance using QuickField provided valuable insights into the behavior of capacitive touch sensors. By modeling various positions of a conductive stylus in relation to the sensor, I was able to observe and quantify how the capacitance changes as the stylus approaches the electrodes. This change in capacitance is crucial for the effective functioning of touch sensors, as it directly impacts their sensitivity and accuracy.
+
+The parametric analysis, facilitated by the LabelMover tool, enabled efficient automation of the simulation process, ensuring comprehensive data collection for different stylus positions. Despite challenges such as software limitations and crashes, the simulations were successfully completed, demonstrating the robustness and versatility of QuickField for electrostatic analysis.
+
+Overall, this project enhanced my understanding of capacitive touch sensor design and analysis, providing practical experience in handling simulation tools and addressing real-world challenges. The findings from these simulations can inform the development and optimization of touch-sensitive devices, contributing to advancements in sensor technology.
+
+---
+
 
