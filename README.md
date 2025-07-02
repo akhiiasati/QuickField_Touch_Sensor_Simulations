@@ -191,6 +191,7 @@ The parametric analysis revealed that as the finger's position changes, the curr
 
 Despite challenges such as mesh generation limits and software crashes, the simulations were successfully completed by manually adjusting mesh parameters and using automation tools like LabelMover. This project not only enhanced my technical skills in using simulation software but also provided practical experience in problem-solving and optimizing designs within software constraints.
 
+---
 
 ## Example 3: Touchless Sensor
 
@@ -221,6 +222,30 @@ Touchless sensor consists of two groups of electrodes on the sides of the rectan
 ![image](https://github.com/user-attachments/assets/2ee9506f-68da-469e-a453-59250d7f4db8)
 
 
+### Given Parameters
+- Relative permittivity of dielectric (ε): 4.7
+- Tx voltage (V): +1V
+- Rx electrodes: Floating potential
+
+### Task
+Determine the Rx electrode potentials for different finger positions relative to the sensor.
+
+### Simulation Steps
+1.	Model Construction:
+   - Define the geometry with electrodes and dielectric material.
+   - Position the finger at different coordinates relative to the sensor surface (simulate only the top-left quarter due to symmetry).
+2.	Boundary Conditions:
+   -	Apply +1V to the Tx electrode.
+   -	Ground the finger.
+   -	Leave Rx electrodes floating.
+3.	Solver Setup:
+   - Use QuickField's 3D electrostatic solver.
+   - Set up the simulation to calculate potential distribution across Rx electrodes for each finger position.
+5.	Post-Processing:
+   - Calculate and visualize potential differences (Tx-Rx) for Rx electrodes at various finger positions.
+   - Analyze the electric field distribution within the sensor.
+
+### Results
 
 
 
